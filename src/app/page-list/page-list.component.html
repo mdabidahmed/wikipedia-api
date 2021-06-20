@@ -1,0 +1,26 @@
+<table class="table is-striped">
+  <thead>
+    <tr *ngIf="pages.length">
+      <th>Title</th>
+      <th>WordCount</th>
+      <th>Snippet</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let page of pages">
+      <td>
+        <a
+          [href]="'https://en.wikipedia.org?curid=' + page.pageid"
+          target="_blank"
+        >
+          {{ page.title }}</a
+        >
+      </td>
+      <td>{{ page.wordcount }}</td>
+      <td [innerHTML]="page.snippet"></td>
+    </tr>
+  </tbody>
+</table>
+<div id="loading" *ngIf="isLoading">
+  <div class="button is-success is-loading"></div>
+</div>

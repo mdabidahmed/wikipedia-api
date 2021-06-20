@@ -1,0 +1,16 @@
+<br />
+<div>
+  <h1 class="title has-text-centered has-text-info  is-1">Wikipedia Api</h1>
+</div>
+<br />
+<div class="box">
+  <form (submit)="onFormSubmit($event)">
+    <input
+      class="input input is-rounded"
+      type="text"
+      style="font-weight: bold;"
+      (input)="term = $event.target.value"
+      placeholder="Search"
+    />
+  </form>
+</div>
